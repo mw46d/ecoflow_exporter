@@ -189,11 +189,12 @@ class EcoflowMQTT():
 
 
 class EcoflowMetric:
-    def __init__(self, ecoflow_payload_key, device_name):
+    def __init__(self, ecoflow_payload_key, device_name, additional_labels = None):
         self.ecoflow_payload_key = ecoflow_payload_key
         self.device_name = device_name
+        self.additional_labels_keys = list((additional_labels or {}).keys())
         self.name = f"ecoflow_{self.convert_ecoflow_key_to_prometheus_name()}"
-        self.metric = Gauge(self.name, f"value from MQTT object key {ecoflow_payload_key}", labelnames=["device"])
+        self.metric = Gauge(self.name, f"value from MQTT object key {ecoflow_payload_key}", labelnames=["device"] + self.additional_labels_keys)
 
     def convert_ecoflow_key_to_prometheus_name(self):
         # bms_bmsStatus.maxCellTemp -> bms_bms_status_max_cell_temp
@@ -210,12 +211,14 @@ class EcoflowMetric:
             raise EcoflowMetricException(f"Cannot convert payload key {self.ecoflow_payload_key} to comply with the Prometheus data model. Please, raise an issue!")
         return new
 
-    def set(self, value):
+    def set(self, value, additional_labels = None):
         # According to best practices for naming metrics and labels, the voltage should be in volts and the current in amperes
         # WARNING! This will ruin all Prometheus historical data and backward compatibility of Grafana dashboard
         # value = value / 1000 if value.endswith("_vol") or value.endswith("_amp") else value
-        log.debug(f"Set {self.name} = {value}")
-        self.metric.labels(device=self.device_name).set(value)
+        if additional_labels is None:
+            additional_labels = {}
+        log.debug(f"Set {self.name} = {value}. {additional_labels}")
+        self.metric.labels(device=self.device_name, **additional_labels).set(value)
 
     def clear(self):
         log.debug(f"Clear {self.name}")
@@ -276,27 +279,53 @@ class Worker:
         log.debug(f"Processing params: {params}")
         for ecoflow_payload_key in params.keys():
             ecoflow_payload_value = params[ecoflow_payload_key]
-            if not isinstance(ecoflow_payload_value, (int, float)):
+            if not isinstance(ecoflow_payload_value, (int, float, list)):
                 log.warning(f"Skipping unsupported metric {ecoflow_payload_key}: {ecoflow_payload_value}")
                 continue
 
-            metric = self.get_metric_by_ecoflow_payload_key(ecoflow_payload_key)
-            if not metric:
-                try:
-                    metric = EcoflowMetric(ecoflow_payload_key, self.device_name)
-                except EcoflowMetricException as error:
-                    log.error(error)
-                    continue
-                log.info(f"Created new metric from payload key {metric.ecoflow_payload_key} -> {metric.name}")
-                self.metrics_collector.append(metric)
+            self.process_metric(ecoflow_payload_key, ecoflow_payload_value)
 
-            metric.set(ecoflow_payload_value)
+    def process_metric(self, payload_metric_key, payload_metric_value, additional_labels = None):
+        if additional_labels is None:
+            additional_labels = {}
+        if isinstance(payload_metric_value, list):
+            idx_field_name = f"idx_{len(list(k for k in additional_labels.keys() if k.startswith('idx')))}"
+            for i, metric_val in enumerate(payload_metric_value):
+                c_additional_labels = additional_labels.copy()
+                c_additional_labels[idx_field_name] = str(i)
+                self.process_metric(payload_metric_key, metric_val, c_additional_labels)
+        elif isinstance(payload_metric_value, dict):
+            key_field_name = f"field_{len(list(k for k in additional_labels.keys() if k.startswith('field')))}"
+            for k, v in payload_metric_value.items():
+                c_additional_labels = additional_labels.copy()
+                c_additional_labels[key_field_name] = k
+                self.process_metric(payload_metric_key, v, c_additional_labels)
+        elif isinstance(payload_metric_value, (int, float)):
+            self.store_metric(payload_metric_key, payload_metric_value, additional_labels)
+        elif isinstance(payload_metric_value, str):
+            additional_labels["str_label"] = payload_metric_value
+            self.store_metric(f"{payload_metric_key}_str", 1, additional_labels)
+        else:
+            log.warning(f"Skipping unsupported metric {payload_metric_key}: {payload_metric_value} ({additional_labels}) (unknown type: {type(payload_metric_value)})")
 
-            if ecoflow_payload_key == 'inv.acInVol' and ecoflow_payload_value == 0:
-                ac_in_current = self.get_metric_by_ecoflow_payload_key('inv.acInAmp')
-                if ac_in_current:
-                    log.debug("Set AC inverter input current to zero because of zero inverter voltage")
-                    ac_in_current.set(0)
+    def store_metric(self, payload_metric_key, payload_metric_value, additional_labels = None):
+        metric = self.get_metric_by_ecoflow_payload_key(payload_metric_key)
+        if not metric:
+            try:
+                metric = EcoflowMetric(payload_metric_key, self.device_name, additional_labels)
+            except EcoflowMetricException as error:
+                log.error(error)
+                return
+            log.info(f"Created new metric from payload key {metric.ecoflow_payload_key} -> {metric.name}")
+            self.metrics_collector.append(metric)
+
+        metric.set(payload_metric_value, additional_labels)
+
+        if payload_metric_key == 'inv.acInVol' and payload_metric_value == 0:
+            ac_in_current = self.get_metric_by_ecoflow_payload_key('inv.acInAmp')
+            if ac_in_current:
+                log.debug("Set AC inverter input current to zero because of zero inverter voltage")
+                ac_in_current.set(0)
 
 
 def signal_handler(signum, frame):
