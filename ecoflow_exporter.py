@@ -1,3 +1,4 @@
+import datetime
 import logging as log
 import sys
 import os
@@ -73,6 +74,7 @@ class EcoflowAuthentication:
             self.mqtt_username = response["data"]["certificateAccount"]
             self.mqtt_password = response["data"]["certificatePassword"]
             self.mqtt_client_id = f"ANDROID_{str(uuid.uuid4()).upper()}_{user_id}"
+            self.mqtt_user_id = user_id
         except KeyError as key:
             raise Exception(f"Failed to extract key {key} from {response}")
 
@@ -98,13 +100,15 @@ class EcoflowAuthentication:
 
 class EcoflowMQTT():
 
-    def __init__(self, message_queue, device_sn, username, password, addr, port, client_id, timeout_seconds):
+    def __init__(self, message_queue, device_sn, auth, timeout_seconds):
         self.message_queue = message_queue
-        self.addr = addr
-        self.port = port
-        self.username = username
-        self.password = password
-        self.client_id = client_id
+        self.addr = auth.mqtt_url
+        self.port = auth.mqtt_port
+        self.username = auth.mqtt_username
+        self.password = auth.mqtt_password
+        self.client_id = auth.mqtt_client_id
+        self.user_id = auth.mqtt_user_id
+        self.device_sn = device_sn
         self.topic = f"/app/device/property/{device_sn}"
         self.timeout_seconds = timeout_seconds
         self.last_message_time = None
@@ -113,6 +117,7 @@ class EcoflowMQTT():
         self.connect()
 
         self.idle_timer = RepeatTimer(10, self.idle_reconnect)
+        self.ping_timer = None
         self.idle_timer.daemon = True
         self.idle_timer.start()
 
@@ -153,14 +158,72 @@ class EcoflowMQTT():
                 else:
                     log.error("Reconnection errored out, or timed out, attempted to reconnect...")
 
+    def request_latest_quotas(self):
+        message  = {
+            "id":          str(round(time.time() * 1000)),
+            "version":     "1.1",
+            "from":        "Android",
+            "operateType": "latestQuotas",
+            "params":      {},
+        }
+
+        payload = json.dumps(message)
+
+        topic = f"/app/{self.user_id}/{self.device_sn}/thing/property/get"
+
+        info = self.client.publish(topic, payload, 1)
+        info.wait_for_publish(5.0)
+
+        if info.is_published:
+            log.info(f"Published to {topic}")
+        else:
+            log.info(f"Failed to publish to {topic}")
+
+    def ping(self):
+        now = datetime.datetime.utcnow()
+
+        message = {
+            "id":          str(round(time.time() * 1000)),
+            "version":     "1.0",
+            "from":        "Android",
+            "operateType": "setRtcTime",
+            "moduleType":  2,
+            "params": {
+                "min":   now.minute,
+                "day":   now.day,
+                "week":  now.weekday,
+                "sec":   now.second,
+                "month": now.month,
+                "hour":  now.hour,
+                "year":  now.year,
+            },
+        }
+
+        payload = json.dumps(message)
+
+        topic = f"/app/{self.user_id}/{self.device_sn}/%s/thing/property/set"
+        info = self.client.publish(topic, payload, 1)
+        info.wait_for_publish(5.0)
+
+        if info.is_published:
+            log.info(f"Published to {topic}")
+        else:
+            log.info(f"Failed to publish to {topic}")
+
     def on_connect(self, client, userdata, flags, reason_code, properties):
         # Initialize the time of last message at least once upon connection so that other things that rely on that to be
         # set (like idle_reconnect) work
+        self.request_latest_quotas()
         self.last_message_time = time.time()
         match reason_code:
             case "Success":
                 self.client.subscribe(self.topic)
                 log.info(f"Subscribed to MQTT topic {self.topic}")
+                if self.ping_timer == None:
+                    self.ping_timer = RepeatTimer(20, self.ping)
+                    log.info(f"Started RTC ping timer for {self.device_sn}")
+                else:
+                    log.warning(f"RTC ping timer still exists for {self.device_sn}??")
             case "Keep alive timeout":
                 log.error("Failed to connect to MQTT: connection timed out")
             case "Unsupported protocol version":
@@ -181,6 +244,10 @@ class EcoflowMQTT():
     def on_disconnect(self, client, userdata, flags, reason_code, properties):
         if reason_code > 0:
             log.error(f"Unexpected MQTT disconnection: {reason_code}. Will auto-reconnect")
+            if self.ping_timer != None:
+                self.ping_timer.cancel();
+                self.ping_timer = None
+                log.info(f"RTC ping timer canceled for {self.device_sn}")
             time.sleep(5)
 
     def on_message(self, client, userdata, message):
@@ -366,6 +433,8 @@ def main():
     collecting_interval_seconds = int(os.getenv("COLLECTING_INTERVAL", "10"))
     timeout_seconds = int(os.getenv("MQTT_TIMEOUT", "60"))
 
+    log.info("MW version!")
+
     if (not device_sn or not ecoflow_username or not ecoflow_password):
         log.error("Please, provide all required environment variables: DEVICE_SN, ECOFLOW_USERNAME, ECOFLOW_PASSWORD")
         sys.exit(1)
@@ -378,7 +447,7 @@ def main():
 
     message_queue = Queue()
 
-    EcoflowMQTT(message_queue, device_sn, auth.mqtt_username, auth.mqtt_password, auth.mqtt_url, auth.mqtt_port, auth.mqtt_client_id, timeout_seconds)
+    EcoflowMQTT(message_queue, device_sn, auth, timeout_seconds)
 
     metrics = Worker(message_queue, device_name, collecting_interval_seconds)
 
