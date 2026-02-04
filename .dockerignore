@@ -1,0 +1,10 @@
+.github
+.venv
+docker-compose
+images
+.dockerignore
+.gitignore
+Dockerfile
+LICENSE
+README.md
+**/*.env

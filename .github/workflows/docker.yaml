@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - develop
     paths:
       - "*.py"
       - requirements.txt
@@ -37,7 +38,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker meta
@@ -52,7 +53,8 @@ jobs:
             type=semver,pattern={{version}}
             # set latest tag for master branch
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
-
+            # short commit hash for develop
+            type=raw,value=${{ github.sha }},enable=${{ github.ref_name == 'develop' }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
