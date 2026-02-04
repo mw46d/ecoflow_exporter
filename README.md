@@ -273,4 +273,3 @@ Actual list of payload metrics:
 - `ecoflow_pd_wifi_rssi`
 - `ecoflow_pd_wifi_ver`
 - `ecoflow_pd_wire_watts`
-
