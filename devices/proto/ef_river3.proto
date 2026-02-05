@@ -395,7 +395,7 @@ message River3BMSHeartBeatReport {
 }
 
 // Statistics enum
-enum River3StatisticsObject {
+enum STATISTICS_OBJECT {
     STATISTICS_OBJECT_START = 0;
     STATISTICS_OBJECT_DEV_WORK_TIME = 1;
     STATISTICS_OBJECT_AC_OUT_ENERGY = 2;
@@ -426,7 +426,7 @@ enum River3StatisticsObject {
 }
 
 message River3StatisticsRecordItem {
-    optional River3StatisticsObject statistics_object = 1;
+    optional STATISTICS_OBJECT statistics_object = 1;
     optional uint32 statistics_content = 2;
 }
 

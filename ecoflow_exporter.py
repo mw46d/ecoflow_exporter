@@ -289,6 +289,9 @@ class EcoflowMQTT():
         else:
             if self.device is None:
                 match self.device_type:
+                    case 'android':
+                        from devices.android import Android
+                        self.device = Android()
                     case 'river3':
                         from devices.river3 import EcoflowRiver3
                         self.device = EcoflowRiver3()

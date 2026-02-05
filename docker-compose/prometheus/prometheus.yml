@@ -4,12 +4,12 @@ global:
   scrape_timeout: 10s
   evaluation_interval: 10s # Evaluate rules every 10 seconds. The default is every 1 minute.
 
-alerting:
-  alertmanagers:
-    - scheme: http
-      static_configs:
-        - targets:
-          - alertmanager:9093
+# alerting:
+#   alertmanagers:
+#     - scheme: http
+#       static_configs:
+#         - targets:
+#           - alertmanager:9093
 
 rule_files:
   - 'alerts/*.yml'
