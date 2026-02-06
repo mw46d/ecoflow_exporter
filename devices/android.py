@@ -111,28 +111,28 @@ class Android(EcoflowCommon):
                 msg_runtime_upload.ParseFromString(pdata)
                 return self._protobuf_to_dict(msg_runtime_upload)
             elif cmd_func == 254 and cmd_id == 23:
-                msg_runtime_upload = android_pb2.DevRequest()
-                msg_runtime_upload.ParseFromString(pdata)
-                return self._protobuf_to_dict(msg_runtime_upload)
+                msg_dev_request = android_pb2.DevRequest()
+                msg_dev_request.ParseFromString(pdata)
+                return self._protobuf_to_dict(msg_dev_request)
             elif cmd_func == 254 and cmd_id == 25:
-                msg_runtime_upload = android_pb2.SafetyParamSet()
-                msg_runtime_upload.ParseFromString(pdata)
-                return self._protobuf_to_dict(msg_runtime_upload)
+                msg_safety_param_set = android_pb2.SafetyParamSet()
+                msg_safety_param_set.ParseFromString(pdata)
+                return self._protobuf_to_dict(msg_safety_param_set)
             elif cmd_func == 32 and cmd_id == 177:
-                msg_runtime_upload = android_pb2.BpCloudHeartbeatReport()
-                msg_runtime_upload.ParseFromString(pdata)
-                return self._protobuf_to_dict(msg_runtime_upload)
+                msg_bp_cloud_heartbeat = android_pb2.BpCloudHeartbeatReport()
+                msg_bp_cloud_heartbeat.ParseFromString(pdata)
+                return self._protobuf_to_dict(msg_bp_cloud_heartbeat)
             elif cmd_func == 240 and cmd_id == 5:
-                msg_runtime_upload = android_pb2.EDevSysReport()
-                msg_runtime_upload.ParseFromString(pdata)
-                return self._protobuf_to_dict(msg_runtime_upload)
+                msg_edev_sys = android_pb2.EDevSysReport()
+                msg_edev_sys.ParseFromString(pdata)
+                return self._protobuf_to_dict(msg_edev_sys)
             elif cmd_func == 240 and cmd_id == 36:
-                msg_runtime_upload = android_pb2.EDevEnergyRemoteListSync()
-                msg_runtime_upload.ParseFromString(pdata)
-                return self._protobuf_to_dict(msg_runtime_upload)
+                msg_edev_energy_remote = android_pb2.EDevEnergyRemoteListSync()
+                msg_edev_energy_remote.ParseFromString(pdata)
+                return self._protobuf_to_dict(msg_edev_energy_remote)
             else:
                 _LOGGER.info(f"MW _decode_message_by_type cmd_func= {cmd_func} cmd_id= {cmd_id} len(pdata)= {len(pdata)}")
-                with open(f"/tmp/mw_{round(time.time() * 1000)}.msg", 'wb') as f:
+                with open(f"/tmp/mw_{cmd_func}:{cmd_id}_{round(time.time() * 1000)}.msg", 'wb') as f:
                     f.write(pdata)
                 return {}
         except Exception as e:

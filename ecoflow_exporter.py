@@ -456,6 +456,14 @@ class Worker:
 
     def process_payload(self, device_name, params):
         log.debug(f"Processing params: {device_name}:{params}")
+        # messages for multiple batteries connected to the same Ocean Pro inverter
+        # have different product_sn's
+        product_sn = params.pop('product_sn', None)
+
+        labels = { 'device': device_name }
+        if product_sn:
+            labels['product_sn'] = product_sn
+
         for ecoflow_payload_key in params.keys():
             ecoflow_payload_value = params[ecoflow_payload_key]
             if not isinstance(ecoflow_payload_value, (int, float, str, list)):
@@ -467,7 +475,7 @@ class Worker:
                 metrics.append({
                     'name': ecoflow_payload_key,
                     'value': ecoflow_payload_value,
-                    'labels': { 'device': device_name }
+                    'labels': labels
                 })
 
             if isinstance(ecoflow_payload_value, str):
@@ -478,7 +486,7 @@ class Worker:
                     'name': ecoflow_payload_key,
                     'value': 0,
                     'labels': {
-                        'device': device_name,
+                        **labels,
                         'value': ecoflow_payload_value
                     }
                 })
@@ -494,7 +502,7 @@ class Worker:
                             'name': ecoflow_payload_key,
                             'value': value,
                             'labels': {
-                                'device': device_name,
+                                **labels,
                                 'num': index,
                             }
                         })
@@ -508,9 +516,7 @@ class Worker:
                         metrics.append({
                             'name': f"statistics_{metric_key}",
                             'value': metric_value,
-                            'labels': {
-                                'device': device_name,
-                            }
+                            'labels': labels
                         })
 
             for _metric in metrics:
