@@ -423,6 +423,7 @@ class Worker:
                     params = payload['params']
                     self.process_payload(ef_d.device_name, params)
                     handled_devices.append(ef_d)
+                    ef_d.handled_messages += 1
                 except KeyError as key:
                     log.error(f"Failed to extract key {key} from payload: {payload}")
                 except Exception as error:
@@ -434,12 +435,14 @@ class Worker:
                 for hd in handled_devices:
                     if d == hd:
                         self.mqtt_messages_receive_total.labels(device = hd.device_name).inc(hd.handled_messages)
+                        hd.handled_messages = 0
                         self.online.labels(device = hd.device_name).set(1)
                         seen = True
                         break
 
                 if not seen:
                     self.online.labels(device = d.device_name).set(0)
+                    d.handled_messages = 0
                     # XXX How to clear old values?
 
             time.sleep(self.collecting_interval_seconds)
