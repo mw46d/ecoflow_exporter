@@ -99,30 +99,33 @@ class EcoflowAuthentication:
         return response
 
 
+class EcoflowDevice():
+
+    def __init__(self, device_sn, device_name, device_type):
+        self.device = None
+        self.device_sn = device_sn
+        self.device_name = device_name
+        self.device_type = device_type
+        self.topic = f"/app/device/property/{device_sn}"
+        self.last_message_time = None
+        self.handled_messages = 0
+
 class EcoflowMQTT():
 
-    def __init__(self, message_queue, device_sn, device_type, auth, timeout_seconds):
-        self.message_queue = message_queue
+    def __init__(self, auth, user_data, message_queue, timeout_seconds):
         self.addr = auth.mqtt_url
         self.port = auth.mqtt_port
         self.username = auth.mqtt_username
         self.password = auth.mqtt_password
         self.client_id = auth.mqtt_client_id
         self.user_id = auth.mqtt_user_id
-        self.device_type = device_type
-        self.device_sn = device_sn
-        self.device = None
-        self.topic = f"/app/device/property/{device_sn}"
+        self.user_data = user_data
         self.timeout_seconds = timeout_seconds
-        self.last_message_time = None
         self.client = None
-
-        self.connect()
-
-        self.idle_timer = RepeatTimer(10, self.idle_reconnect)
+        self.idle_timer = None
         self.ping_timer = None
-        self.idle_timer.daemon = True
-        self.idle_timer.start()
+        self.message_queue = message_queue
+        self.last_message_time = None
 
 
     @staticmethod
@@ -148,12 +151,17 @@ class EcoflowMQTT():
             self.client.loop_stop()
             self.client.disconnect()
 
+        if self.idle_timer != None:
+            self.idle_timer.cancel();
+            self.idle_timer = None
+
         self.client = mqtt.Client(
-            client_id=self.client_id,
-            callback_api_version=mqtt.CallbackAPIVersion.VERSION2,
+            client_id = self.client_id,
+            callback_api_version = mqtt.CallbackAPIVersion.VERSION2,
+            userdata = self.user_data
         )
         self.client.username_pw_set(self.username, self.password)
-        self.client.tls_set(certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED)
+        self.client.tls_set(certfile = None, keyfile = None, cert_reqs = ssl.CERT_REQUIRED)
         self.client.tls_insecure_set(False)
         self.client.on_connect = self.on_connect
         self.client.on_disconnect = self.on_disconnect
@@ -163,6 +171,9 @@ class EcoflowMQTT():
         self.client.connect(self.addr, self.port)
         self.client.loop_start()
 
+        self.idle_timer = RepeatTimer(10, self.idle_reconnect)
+        self.idle_timer.daemon = True
+        self.idle_timer.start()
 
     def idle_reconnect(self):
         if self.last_message_time and time.time() - self.last_message_time > self.timeout_seconds:
@@ -185,7 +196,7 @@ class EcoflowMQTT():
                     log.error("Reconnection errored out, or timed out, attempted to reconnect...")
 
 
-    def request_latest_quotas(self):
+    def request_latest_quotas_device(self, ef_d):
         message  = {
             "id":          str(round(time.time() * 1000)),
             "version":     "1.1",
@@ -196,19 +207,28 @@ class EcoflowMQTT():
 
         payload = json.dumps(message)
 
-        topic = f"/app/{self.user_id}/{self.device_sn}/thing/property/get"
+        topic = f"/app/{self.user_id}/{ef_d.device_sn}/thing/property/get"
 
         info = self.client.publish(topic, payload, 1)
         info.wait_for_publish(5.0)
 
         if info.is_published:
             log.info(f"Published to {topic}")
+            t = time.time()
+            if self.last_message_time == None or t > self.last_message_time:
+                self.last_message_time = time.time()
+            ef_d.last_message_time = self.last_message_time
         else:
             log.info(f"Failed to publish to {topic}")
 
 
-    def ping(self):
-        now = datetime.datetime.utcnow()
+    def request_latest_quotas(self):
+        for d in self.user_data:
+            self.request_latest_quotas_device(d)
+
+
+    def ping_device(self, ef_d):
+        now = datetime.datetime.now(datetime.UTC)
 
         message = {
             "id":          str(round(time.time() * 1000)),
@@ -219,7 +239,7 @@ class EcoflowMQTT():
             "params": {
                 "min":   now.minute,
                 "day":   now.day,
-                "week":  now.weekday,
+                "week":  now.isoweekday(),
                 "sec":   now.second,
                 "month": now.month,
                 "hour":  now.hour,
@@ -229,7 +249,7 @@ class EcoflowMQTT():
 
         payload = json.dumps(message)
 
-        topic = f"/app/{self.user_id}/{self.device_sn}/%s/thing/property/set"
+        topic = f"/app/{self.user_id}/{ef_d.device_sn}/thing/property/set"
         info = self.client.publish(topic, payload, 1)
         info.wait_for_publish(5.0)
 
@@ -239,20 +259,27 @@ class EcoflowMQTT():
             log.info(f"Failed to publish to {topic}")
 
 
+    def ping(self):
+        for d in self.user_data:
+            self.ping_device(d)
+
+
     def on_connect(self, client, _userdata, _flags, reason_code, _properties):
         # Initialize the time of last message at least once upon connection so that other things that rely on that to be
         # set (like idle_reconnect) work
-        self.request_latest_quotas()
-        self.last_message_time = time.time()
         match reason_code:
             case "Success":
-                self.client.subscribe(self.topic)
-                log.info(f"Subscribed to MQTT topic {self.topic}")
+                self.request_latest_quotas()
+                for d in self.user_data:
+                    self.client.subscribe(d.topic)
+                    log.info(f"Subscribed to MQTT topic {d.topic}")
                 if self.ping_timer == None:
-                    self.ping_timer = RepeatTimer(20, self.ping)
-                    log.info(f"Started RTC ping timer for {self.device_sn}")
+                    self.ping_timer = RepeatTimer(45, self.ping)
+                    self.ping_timer.daemon = True
+                    self.ping_timer.start()
+                    log.info(f"Started RTC ping timer")
                 else:
-                    log.warning(f"RTC ping timer still exists for {self.device_sn}??")
+                    log.warning(f"RTC ping timer still exists??")
             case "Keep alive timeout":
                 log.error("Failed to connect to MQTT: connection timed out")
             case "Unsupported protocol version":
@@ -271,49 +298,59 @@ class EcoflowMQTT():
         return client
 
 
-    @staticmethod
+    # XXX ? @staticmethod
     def on_disconnect(self, _client, _userdata, _flags, reason_code, _properties): # noqa: F841
         if reason_code > 0:
             log.error(f"Unexpected MQTT disconnection: {reason_code}. Will auto-reconnect")
             if self.ping_timer != None:
                 self.ping_timer.cancel();
                 self.ping_timer = None
-                log.info(f"RTC ping timer canceled for {self.device_sn}")
+                log.info(f"RTC ping timer canceled")
             time.sleep(5)
 
 
-    def on_message(self, _client, _userdata, message):
-        if self.device_type is None:
-            self.message_queue.put(message.payload.decode("utf-8"))
-            self.last_message_time = time.time()
+    def on_message(self, _client, userdata, message):
+        ef_d = None
+        for d in userdata:
+            if d.topic == message.topic:
+                ef_d = d
+
+        if ef_d == None:
+            log.error(f"No device found for {message.topic}")
+            return
+
+        if ef_d.device_type is None:
+            self.message_queue.put({ 'ef_device': ef_d, 'message': message.payload.decode("utf-8") })
         else:
-            if self.device is None:
-                match self.device_type:
+            if ef_d.device is None:
+                match ef_d.device_type:
                     case 'android':
                         from devices.android import Android
-                        self.device = Android()
+                        ef_d.device = Android()
                     case 'river3':
                         from devices.river3 import EcoflowRiver3
-                        self.device = EcoflowRiver3()
+                        ef_d.device = EcoflowRiver3()
                     case 'unsupported':
                         return
                     case _:
-                        self.device_type = 'unsupported'
-                        log.error(f"Unsupported device: {self.device_type}")
+                        ef_d.device_type = 'unsupported'
+                        log.error(f"Unsupported device: {ef_d.device_type}")
 
-            if self.device is not None:
-                self.message_queue.put(self.device.get_payload(raw_data=message.payload))
+            if ef_d.device is not None:
+                self.message_queue.put({ 'ef_device': ef_d, 'message': ef_d.device.get_payload(raw_data = message.payload) })
 
-        self.last_message_time = time.time()
+        t = time.time()
+        if self.last_message_time == None or t > self.last_message_time:
+            self.last_message_time = time.time()
+
+        ef_d.last_message_time = t
 
 
 class EcoflowMetric:
     def __init__(self, metric_data: dict):
         self.ecoflow_payload_key = metric_data['name']
         self.name = f"ecoflow_{self.convert_ecoflow_key_to_prometheus_name()}"
-        self.labels = metric_data['labels']
-        self.metric_key = (f"{metric_data['name']}|" + "|".join(f"{k}={v}" for k, v in sorted(metric_data['labels'].items())))
-        self.metric = Gauge(self.name, f"value from MQTT object key {self.ecoflow_payload_key}", labelnames=self.labels.keys())
+        self.metric = Gauge(self.name, f"value from MQTT object key {self.ecoflow_payload_key}", labelnames = metric_data['labels'].keys())
 
 
     def convert_ecoflow_key_to_prometheus_name(self):
@@ -332,23 +369,23 @@ class EcoflowMetric:
         return new
 
 
-    def set(self, value):
+    def set(self, labels, value):
         # According to best practices for naming metrics and labels, the voltage should be in volts and the current in amperes
         # WARNING! This will ruin all Prometheus historical data and backward compatibility of Grafana dashboard
         # value = value / 1000 if value.endswith("_vol") or value.endswith("_amp") else value
         log.debug(f"Set {self.name} = {value}")
-        self.metric.labels(**self.labels).set(value)
+        self.metric.labels(**labels).set(value)
 
 
-    def clear(self):
+    def clear(self, labels):
         log.debug(f"Clear {self.name}")
-        self.metric.clear()
+        self.metric.labels(**labels).clear()
 
 
 class Worker:
-    def __init__(self, message_queue, device_name, collecting_interval_seconds=10):
+    def __init__(self, message_queue, device_list, collecting_interval_seconds = 10):
         self.message_queue = message_queue
-        self.device_name = device_name
+        self.device_list = device_list
         self.collecting_interval_seconds = collecting_interval_seconds
         self.metrics_collector = []
         self.online = Gauge("ecoflow_online", "1 if device is online", labelnames=["device"])
@@ -361,30 +398,49 @@ class Worker:
             queue_size = self.message_queue.qsize()
             if queue_size > 0:
                 log.info(f"Processing {queue_size} event(s) from the message queue")
-                self.online.labels(device=self.device_name).set(1)
-                self.mqtt_messages_receive_total.labels(device=self.device_name).inc(queue_size)
-            else:
-                log.info("Message queue is empty. Assuming that the device is offline")
-                self.online.labels(device=self.device_name).set(0)
-                # Clear metrics for NaN (No data) instead of last value
-                for metric in self.metrics_collector:
-                    metric.clear()
+            # if queue_size > 0:
+            #     log.info(f"Processing {queue_size} event(s) from the message queue")
+            #     self.online.labels(device=self.device_name).set(1)
+            #     self.mqtt_messages_receive_total.labels(device=self.device_name).inc(queue_size)
+            # else:
+            #     log.info("Message queue is empty. Assuming that the device is offline")
+            #     self.online.labels(device=self.device_name).set(0)
+            #     # Clear metrics for NaN (No data) instead of last value
+            #     for metric in self.metrics_collector:
+            #         metric.clear()
 
+            handled_devices = []
             while not self.message_queue.empty():
-                payload = self.message_queue.get()
-                log.debug(f"Received payload: {payload}")
+                m = self.message_queue.get()
+                ef_d = m['ef_device']
+                payload = m['message']
+                log.debug(f"Received payload: {payload} for {ef_d.device_sn}")
                 if payload is None:
                     continue
 
                 try:
                     payload = json.loads(payload)
                     params = payload['params']
-                    self.process_payload(params)
+                    self.process_payload(ef_d.device_name, params)
+                    handled_devices.append(ef_d)
                 except KeyError as key:
                     log.error(f"Failed to extract key {key} from payload: {payload}")
                 except Exception as error:
                     log.error(f"Failed to parse MQTT payload: {payload} Error: {error}")
                     continue
+
+            for d in self.device_list:
+                seen = False
+                for hd in handled_devices:
+                    if d == hd:
+                        self.mqtt_messages_receive_total.labels(device = hd.device_name).inc(hd.handled_messages)
+                        self.online.labels(device = hd.device_name).set(1)
+                        seen = True
+                        break
+
+                if not seen:
+                    self.online.labels(device = d.device_name).set(0)
+                    # XXX How to clear old values?
 
             time.sleep(self.collecting_interval_seconds)
 
@@ -398,8 +454,8 @@ class Worker:
         return False
 
 
-    def process_payload(self, params):
-        log.debug(f"Processing params: {params}")
+    def process_payload(self, device_name, params):
+        log.debug(f"Processing params: {device_name}:{params}")
         for ecoflow_payload_key in params.keys():
             ecoflow_payload_value = params[ecoflow_payload_key]
             if not isinstance(ecoflow_payload_value, (int, float, str, list)):
@@ -411,7 +467,7 @@ class Worker:
                 metrics.append({
                     'name': ecoflow_payload_key,
                     'value': ecoflow_payload_value,
-                    'labels': { 'device': self.device_name }
+                    'labels': { 'device': device_name }
                 })
 
             if isinstance(ecoflow_payload_value, str):
@@ -422,7 +478,7 @@ class Worker:
                     'name': ecoflow_payload_key,
                     'value': 0,
                     'labels': {
-                        'device': self.device_name,
+                        'device': device_name,
                         'value': ecoflow_payload_value
                     }
                 })
@@ -438,7 +494,7 @@ class Worker:
                             'name': ecoflow_payload_key,
                             'value': value,
                             'labels': {
-                                'device': self.device_name,
+                                'device': device_name,
                                 'num': index,
                             }
                         })
@@ -453,7 +509,7 @@ class Worker:
                             'name': f"statistics_{metric_key}",
                             'value': metric_value,
                             'labels': {
-                                'device': self.device_name,
+                                'device': device_name,
                             }
                         })
 
@@ -510,6 +566,7 @@ def main():
 
     log.basicConfig(stream=sys.stdout, level=log_level, format='%(asctime)s %(levelname)-7s %(message)s')
 
+    device_pretty_names_j = os.getenv("DEVICES_PRETTY_NAMES")
     device_sn = os.getenv("DEVICE_SN")
     device_name = os.getenv("DEVICE_NAME") or device_sn
     device_type = os.getenv("DEVICE_TYPE") or None
@@ -520,7 +577,7 @@ def main():
     collecting_interval_seconds = int(os.getenv("COLLECTING_INTERVAL", "10"))
     timeout_seconds = int(os.getenv("MQTT_TIMEOUT", "60"))
 
-    if not device_sn or not ecoflow_username or not ecoflow_password:
+    if not device_pretty_names_j and not device_sn or not ecoflow_username or not ecoflow_password:
         log.error("Please, provide all required environment variables: DEVICE_SN, ECOFLOW_USERNAME, ECOFLOW_PASSWORD")
         sys.exit(1)
 
@@ -530,16 +587,48 @@ def main():
         log.error(error)
         sys.exit(1)
 
+    device_map = {}
+    if device_pretty_names_j:
+        try:
+            device_map = json.loads(device_pretty_names_j)
+        except Exception as e:
+            log.error("DEVICES_PRETTY_NAMES was not valid JSON, make sure it has format {\"R33XXXXXXXXX\":\"My Delta 2\", \"R33YYYYY\":\"Delta Pro backup\"}. Original error: {e}")
+
+    if device_sn:
+        device_a = device_sn.split(',')
+
+        for d in device_a:
+            if d not in device_map:
+                device_map[d] = d
+
+    if len(device_map) == 0:
+        log.error("No devices found")
+        sys.exit(1)
+
+    log.info(f"devices: {device_map}")
+
+    ef_devices = []
     message_queue = Queue()
+    ef_client = EcoflowMQTT(auth, ef_devices, message_queue, timeout_seconds)
 
-    EcoflowMQTT(message_queue, device_sn, device_type, auth, timeout_seconds)
+    for d in device_map:
+        d_type = None
+        if d.startswith('HR51ZA1AVH') or d.startswith('HR61ZA1AVH'):
+            d_type = 'android'
+        d_name = device_map[d]
+        if len(d_name) == 0:
+            d_name = d
 
-    metrics = Worker(message_queue, device_name, collecting_interval_seconds)
+        ef_devices.append(EcoflowDevice(d, d_name, d_type))
 
+    metrics_worker = Worker(message_queue, ef_devices, collecting_interval_seconds)
+
+    log.info(f"Starting http server on {exporter_port}")
     start_http_server(exporter_port)
 
     try:
-        metrics.loop()
+        ef_client.connect();
+        metrics_worker.loop()
 
     except KeyboardInterrupt:
         log.info("Received KeyboardInterrupt. Exiting...")

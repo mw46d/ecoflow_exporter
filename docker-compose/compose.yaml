@@ -43,6 +43,8 @@ services:
     restart: unless-stopped
     environment:
       DEVICE_SN: ${DEVICE_SN}
+      DEVICES_PRETTY_NAMES: "${DEVICES_PRETTY_NAMES}"
+      DEVICE_TYPE: ${DEVICE_TYPE}
       ECOFLOW_USERNAME: ${ECOFLOW_USERNAME}
       ECOFLOW_PASSWORD: "${ECOFLOW_PASSWORD}"
       EXPORTER_PORT: 9091
