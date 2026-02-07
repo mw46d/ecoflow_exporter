@@ -298,7 +298,6 @@ class EcoflowMQTT():
         return client
 
 
-    # XXX ? @staticmethod
     def on_disconnect(self, _client, _userdata, _flags, reason_code, _properties): # noqa: F841
         if reason_code > 0:
             log.error(f"Unexpected MQTT disconnection: {reason_code}. Will auto-reconnect")
