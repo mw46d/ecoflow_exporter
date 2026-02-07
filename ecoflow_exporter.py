@@ -441,9 +441,11 @@ class Worker:
                         break
 
                 if not seen:
-                    self.online.labels(device = d.device_name).set(0)
+                    if time.time() - d.last_message_time > 60:
+                        # I want at least one message per minute
+                        self.online.labels(device = d.device_name).set(0)
+                        # XXX How to clear old values?
                     d.handled_messages = 0
-                    # XXX How to clear old values?
 
             time.sleep(self.collecting_interval_seconds)
 
