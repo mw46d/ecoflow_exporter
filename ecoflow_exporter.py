@@ -598,12 +598,18 @@ def main():
         except Exception as e:
             log.error("DEVICES_PRETTY_NAMES was not valid JSON, make sure it has format {\"R33XXXXXXXXX\":\"My Delta 2\", \"R33YYYYY\":\"Delta Pro backup\"}. Original error: {e}")
 
+    if device_name:
+        device_name_a  = device_name.split(',')
+
     if device_sn:
         device_a = device_sn.split(',')
 
-        for d in device_a:
-            if d not in device_map:
-                device_map[d] = d
+        for i, sn in enumerate(device_a):
+            if sn not in device_map:
+                if i < len(device_name_a):
+                    device_map[sn] = device_name_a[i]
+                else:
+                    device_map[sn] = sn
 
     if len(device_map) == 0:
         log.error("No devices found")
@@ -619,6 +625,8 @@ def main():
         d_type = None
         if d.startswith('HR51ZA1AVH') or d.startswith('HR61ZA1AVH'):
             d_type = 'android'
+        elif d.startswith('RIVER3'): # XXX
+            d_type = 'river3'
         d_name = device_map[d]
         if len(d_name) == 0:
             d_name = d

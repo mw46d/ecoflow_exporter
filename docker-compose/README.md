@@ -86,21 +86,38 @@ To run all the services together, do the following:
 - Create `.env` file inside `docker-compose` folder:
 
 ```bash
-# Serial number of your device shown in the mobile application
+# JSON version of a map device SN: name
+DEVICES_PRETTY_NAMES='{"R331ZA*":"Delta 2", "HR61ZA1*": "Ocean Pro Smart Panel", "HR51ZA1*": "Ocean Pro Inverter"}'
+# and/or 
+# Serial number(s) of your device(s) shown in the mobile application
+# For multiple devices, use comma-separated values
 DEVICE_SN="DEVICE_SN"
+# Optional: custom device name(s) for Prometheus labels (comma-separated, same order as DEVICE_SN)
+DEVICE_NAME="name"
 # Email entered in the mobile application
 ECOFLOW_USERNAME="ECOFLOW_USERNAME"
-# Password entereed in the mobile application
+# Password entered in the mobile application
 ECOFLOW_PASSWORD="ECOFLOW_PASSWORD"
 # Username for Grafana Web interface
 GRAFANA_USERNAME="admin"
 # Password for Grafana Web interface
 GRAFANA_PASSWORD="grafana"
+# Telegram bot token and chat ID for Alertmanager notifications
+TELEGRAM_BOT_TOKEN="TELEGRAM_BOT_TOKEN"
+TELEGRAM_CHAT_ID="TELEGRAM_CHAT_ID"
+
+# Example for multiple devices:
+# DEVICE_SN="DAEBX1234567,DELTA2ABCDEF"
+# DEVICE_NAME="delta-pro,delta-2-max"
 ```
 
-- Replace `<TELEGRAM_BOT_TOKEN>` and `<TELEGRAM_CHAT_ID>` with your values in [alertmanager.yaml](alertmanager/alertmanager.yml#L39-L40)
+- Generate `alertmanager.yml` from the template (uses values from `.env`):
 
-> If you don't want to receive notifications to Telegram, comment out `alertmanager` section in [compose.yaml](compose.yaml#L14-L23) and `alerting` section in [prometheus.yml](prometheus/prometheus.yml#L7-L12)
+```bash
+export $(grep -v '^#' .env | xargs) && envsubst < alertmanager/alertmanager.yml.example > alertmanager/alertmanager.yml
+```
+
+> If you don't want to receive notifications to Telegram, comment out the `alertmanager` section in [compose.yaml](compose.yaml) and the `alerting` section in [prometheus.yml](prometheus/prometheus.yml)
 
 - Change directory to `docker-compose`, then create and start the containers:
 
