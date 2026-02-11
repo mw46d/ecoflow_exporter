@@ -54,7 +54,7 @@ services:
       - 3000:3000
 
   ecoflow_exporter:
-    build: ..
+    image: ghcr.io/mw46d/ecoflow_exporter
     ...
     ports:
       - 127.0.0.1:9091:9091
@@ -88,7 +88,7 @@ To run all the services together, do the following:
 ```bash
 # JSON version of a map device SN: name
 DEVICES_PRETTY_NAMES='{"R331ZA*":"Delta 2", "HR61ZA1*": "Ocean Pro Smart Panel", "HR51ZA1*": "Ocean Pro Inverter"}'
-# and/or 
+# and/or
 # Serial number(s) of your device(s) shown in the mobile application
 # For multiple devices, use comma-separated values
 DEVICE_SN="DEVICE_SN"

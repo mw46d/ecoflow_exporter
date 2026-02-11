@@ -177,17 +177,17 @@ class EcoflowMQTT():
 
     def idle_reconnect(self):
         if self.last_message_time and time.time() - self.last_message_time > self.timeout_seconds:
-            log.error(f"[{self.device_sn}] No messages received for {self.timeout_seconds} seconds. Reconnecting to MQTT")
+            log.error(f"No messages received for {self.timeout_seconds} seconds. Reconnecting to MQTT")
             while True:
                 connect_thread = threading.Thread(target=self.connect, daemon=True)
                 connect_thread.start()
                 connect_thread.join(timeout=60)
                 if not connect_thread.is_alive():
-                    log.info(f"[{self.device_sn}] Reconnection successful, continuing")
+                    log.info(f"Reconnection successful, continuing")
                     self.last_message_time = None
                     break
                 else:
-                    log.error(f"[{self.device_sn}] Reconnection timed out, retrying...")
+                    log.error(f"Reconnection timed out, retrying...")
 
 
     def request_latest_quotas_device(self, ef_d):
