@@ -10,7 +10,7 @@ import re
 import base64
 import uuid
 from queue import Queue
-from threading import Timer
+from threading import Thread, Timer
 
 import requests
 import paho.mqtt.client as mqtt
@@ -175,13 +175,14 @@ class EcoflowMQTT():
         self.idle_timer.daemon = True
         self.idle_timer.start()
 
+
     def idle_reconnect(self):
         if self.last_message_time and time.time() - self.last_message_time > self.timeout_seconds:
             log.error(f"No messages received for {self.timeout_seconds} seconds. Reconnecting to MQTT")
             while True:
-                connect_thread = threading.Thread(target=self.connect, daemon=True)
+                connect_thread = Thread(target = self.connect, daemon = True)
                 connect_thread.start()
-                connect_thread.join(timeout=60)
+                connect_thread.join(timeout = 60)
                 if not connect_thread.is_alive():
                     log.info(f"Reconnection successful, continuing")
                     self.last_message_time = None
