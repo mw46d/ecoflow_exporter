@@ -2,7 +2,11 @@
   "apiVersion": "dashboard.grafana.app/v2beta1",
   "kind": "Dashboard",
   "metadata": {
-    "name": "adk8xbh"
+    "name": "adxz2qm",
+    "generation": 1,
+    "creationTimestamp": "2026-02-12T19:27:42Z",
+    "labels": {},
+    "annotations": {}
   },
   "spec": {
     "annotations": [
@@ -15,9 +19,6 @@
           "iconColor": "rgba(0, 211, 255, 1)",
           "name": "Annotations & Alerts",
           "query": {
-            "datasource": {
-              "name": "-- Grafana --"
-            },
             "group": "grafana",
             "kind": "DataQuery",
             "spec": {},
@@ -41,9 +42,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -62,9 +60,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -177,9 +172,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -198,9 +190,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -301,7 +290,7 @@
                 }
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -317,9 +306,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -338,9 +324,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -360,9 +343,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -382,9 +362,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -404,9 +381,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -426,9 +400,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -448,9 +419,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -470,9 +438,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -492,9 +457,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -591,7 +553,7 @@
                 }
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -607,9 +569,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -629,9 +588,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -651,9 +607,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -673,9 +626,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -695,9 +645,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -717,9 +664,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -739,9 +683,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -761,9 +702,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -783,9 +721,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -882,7 +817,7 @@
                 }
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -898,9 +833,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -920,9 +852,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -942,9 +871,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -964,9 +890,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -986,9 +909,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1008,9 +928,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1030,9 +947,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1052,9 +966,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1074,9 +985,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1189,9 +1097,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1210,9 +1115,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1232,9 +1134,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1253,9 +1152,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1274,9 +1170,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1295,9 +1188,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1316,9 +1206,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1337,9 +1224,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1358,9 +1242,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1379,9 +1260,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1497,9 +1375,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1518,9 +1393,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1637,9 +1509,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1658,9 +1527,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1680,9 +1546,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1701,9 +1564,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1722,9 +1582,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1743,9 +1600,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1861,9 +1715,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1882,9 +1733,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1904,9 +1752,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1925,9 +1770,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1946,9 +1788,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1967,9 +1806,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2085,9 +1921,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2100,15 +1933,15 @@
                       "version": "v0"
                     },
                     "refId": "A"
-                  } 
+                  }
                 }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
+            }
           },
           "description": "",
-          "id": 18, 
+          "id": 18,
           "links": [],
           "title": "",
           "vizConfig": {
@@ -2169,7 +2002,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2185,9 +2018,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2200,15 +2030,15 @@
                       "version": "v0"
                     },
                     "refId": "A"
-                  } 
+                  }
                 }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
+            }
           },
           "description": "",
-          "id": 19, 
+          "id": 19,
           "links": [],
           "title": "",
           "vizConfig": {
@@ -2269,7 +2099,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2285,9 +2115,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2399,9 +2226,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2414,15 +2238,15 @@
                       "version": "v0"
                     },
                     "refId": "A"
-                  } 
+                  }
                 }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
+            }
           },
           "description": "",
-          "id": 20, 
+          "id": 20,
           "links": [],
           "title": "",
           "vizConfig": {
@@ -2438,15 +2262,15 @@
                   "mappings": [
                     {
                       "options": {
-                        "1": {
-                          "color": "light-red",
-                          "index": 1,
-                          "text": "Forced Off"
-                        },
                         "0": {
                           "color": "green",
                           "index": 0,
                           "text": "Online"
+                        },
+                        "1": {
+                          "color": "light-red",
+                          "index": 1,
+                          "text": "Forced Off"
                         }
                       },
                       "type": "value"
@@ -2483,7 +2307,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2499,9 +2323,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2540,7 +2361,7 @@
                     "steps": [
                       {
                         "color": "red",
-                        "value": 5
+                        "value": 0
                       },
                       {
                         "color": "orange",
@@ -2579,7 +2400,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2595,9 +2416,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2612,13 +2430,13 @@
                     },
                     "refId": "A"
                   }
-                } 
+                }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
-          },    
-          "description": "", 
+            }
+          },
+          "description": "",
           "id": 22,
           "links": [],
           "title": "Power from PV",
@@ -2663,7 +2481,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2679,9 +2497,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2696,13 +2511,13 @@
                     },
                     "refId": "A"
                   }
-                } 
+                }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
-          },    
-          "description": "", 
+            }
+          },
+          "description": "",
           "id": 23,
           "links": [],
           "title": "Power from BPs",
@@ -2722,6 +2537,10 @@
                       {
                         "color": "green",
                         "value": -100000
+                      },
+                      {
+                        "color": "green",
+                        "value": 0
                       },
                       {
                         "color": "red",
@@ -2751,7 +2570,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2767,9 +2586,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2784,13 +2600,13 @@
                     },
                     "refId": "A"
                   }
-                } 
+                }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
-          },    
-          "description": "", 
+            }
+          },
+          "description": "",
           "id": 24,
           "links": [],
           "title": "Power from Grid",
@@ -2812,8 +2628,12 @@
                         "value": -100000
                       },
                       {
-                        "color": "red",
+                        "color": "green",
                         "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
                       }
                     ]
                   },
@@ -2839,7 +2659,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2855,9 +2675,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2872,13 +2689,13 @@
                     },
                     "refId": "A"
                   }
-                } 
+                }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
-          },    
-          "description": "", 
+            }
+          },
+          "description": "",
           "id": 25,
           "links": [],
           "title": "Power to Home",
@@ -2900,8 +2717,12 @@
                         "value": -100000
                       },
                       {
-                        "color": "red",
+                        "color": "green",
                         "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
                       }
                     ]
                   },
@@ -2927,7 +2748,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -2943,9 +2764,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2960,12 +2778,12 @@
                     },
                     "refId": "A"
                   }
-                }   
-              ],    
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }           
-          },          
+            }
+          },
           "description": "",
           "id": 26,
           "links": [],
@@ -3019,7 +2837,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3035,9 +2853,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3111,7 +2926,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3127,9 +2942,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3203,7 +3015,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3219,9 +3031,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3236,11 +3045,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 29,
@@ -3287,7 +3096,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3303,9 +3112,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3417,9 +3223,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3434,11 +3237,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 30,
@@ -3485,7 +3288,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3501,9 +3304,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3518,11 +3318,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 31,
@@ -3577,7 +3377,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3593,9 +3393,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3610,11 +3407,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 32,
@@ -3669,7 +3466,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3685,9 +3482,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3702,11 +3496,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 33,
@@ -3753,7 +3547,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3769,9 +3563,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3786,11 +3577,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 34,
@@ -3845,7 +3636,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3861,9 +3652,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3878,11 +3666,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 35,
@@ -3937,7 +3725,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -3953,9 +3741,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3970,11 +3755,11 @@
                     },
                     "refId": "A"
                   }
-                }       
-              ],        
+                }
+              ],
               "queryOptions": {},
               "transformations": []
-            }         
+            }
           },
           "description": "",
           "id": 36,
@@ -4021,7 +3806,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -4037,9 +3822,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4151,9 +3933,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4172,9 +3951,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4194,9 +3970,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4216,9 +3989,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4331,9 +4101,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4352,9 +4119,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4374,9 +4138,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4396,9 +4157,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4418,9 +4176,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4440,9 +4195,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4462,9 +4214,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4484,9 +4233,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4506,9 +4252,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4609,7 +4352,7 @@
                 }
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -4625,9 +4368,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4646,9 +4386,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4749,7 +4486,7 @@
                 }
               }
             },
-            "version": "12.3.2"
+            "version": "12.3.2+security-01"
           }
         }
       },
@@ -4765,9 +4502,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4786,9 +4520,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4808,9 +4539,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4830,9 +4558,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4945,9 +4670,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -5055,24 +4777,23 @@
         }
       }
     },
-    "layout": {       
+    "layout": {
       "kind": "RowsLayout",
-      "spec": {       
-        "rows": [       
-          {               
+      "spec": {
+        "rows": [
+          {
             "kind": "RowsLayoutRow",
-            "spec": {     
-              "title": "Header",
+            "spec": {
               "collapse": false,
-              "hideHeader": true, 
-              "fillScreen": false, 
-              "layout": { 
+              "fillScreen": false,
+              "hideHeader": true,
+              "layout": {
                 "kind": "GridLayout",
                 "spec": {
                   "items": [
-                    {             
+                    {
                       "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-19"
@@ -5081,37 +4802,11 @@
                         "width": 4,
                         "x": 0,
                         "y": 0
-                      }   
-                    },
-                    {             
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-20"
-                        },
-                        "height": 2,
-                        "width": 4,
-                        "x": 0,
-                        "y": 2
-                      }   
+                      }
                     },
                     {
                       "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-18"
-                        },
-                        "height": 2,
-                        "width": 4,
-                        "x": 0,
-                        "y": 4
-                      }   
-                    },
-                    {             
-                      "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-22"
@@ -5120,37 +4815,11 @@
                         "width": 3,
                         "x": 4,
                         "y": 0
-                      }   
+                      }
                     },
-                    {             
+                    {
                       "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-23"
-                        },
-                        "height": 2,
-                        "width": 3,
-                        "x": 4,
-                        "y": 2
-                      }   
-                    },
-                    {             
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-24"
-                        },
-                        "height": 2,
-                        "width": 3,
-                        "x": 4,
-                        "y": 4
-                      }   
-                    },
-                    {             
-                      "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-25"
@@ -5159,11 +4828,141 @@
                         "width": 3,
                         "x": 7,
                         "y": 0
-                      }   
+                      }
                     },
-                    {             
+                    {
                       "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-34"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 16,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-31"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 18,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-29"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 20,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-26"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 22,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-20"
+                        },
+                        "height": 2,
+                        "width": 4,
+                        "x": 0,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-23"
+                        },
+                        "height": 2,
+                        "width": 3,
+                        "x": 4,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-35"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 16,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-32"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 18,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-30"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 20,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-27"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 22,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-21"
@@ -5176,33 +4975,33 @@
                     },
                     {
                       "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-34"
+                          "name": "panel-18"
                         },
                         "height": 2,
-                        "width": 2,
-                        "x": 16,
-                        "y": 0
-                      }   
+                        "width": 4,
+                        "x": 0,
+                        "y": 4
+                      }
                     },
                     {
                       "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-35"
+                          "name": "panel-24"
                         },
                         "height": 2,
-                        "width": 2,
-                        "x": 16,
-                        "y": 2
-                      }   
+                        "width": 3,
+                        "x": 4,
+                        "y": 4
+                      }
                     },
                     {
                       "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-36"
@@ -5211,37 +5010,11 @@
                         "width": 2,
                         "x": 16,
                         "y": 4
-                      }   
+                      }
                     },
                     {
                       "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-31"
-                        },
-                        "height": 2,
-                        "width": 2,
-                        "x": 18,
-                        "y": 0
-                      }   
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-32"
-                        },
-                        "height": 2,
-                        "width": 2,
-                        "x": 18,
-                        "y": 2
-                      }   
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-33"
@@ -5250,63 +5023,11 @@
                         "width": 2,
                         "x": 18,
                         "y": 4
-                      }   
+                      }
                     },
                     {
                       "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-29"
-                        },
-                        "height": 2,
-                        "width": 2,
-                        "x": 20,
-                        "y": 0
-                      }   
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-30"
-                        },
-                        "height": 2,
-                        "width": 2,
-                        "x": 20,
-                        "y": 2
-                      }   
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-26"
-                        },
-                        "height": 2,
-                        "width": 2,
-                        "x": 22,
-                        "y": 0
-                      }   
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-27"
-                        },
-                        "height": 2,
-                        "width": 2,
-                        "x": 22,
-                        "y": 2
-                      }   
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-28"
@@ -5315,20 +5036,20 @@
                         "width": 2,
                         "x": 22,
                         "y": 4
-                      }   
+                      }
                     }
                   ]
                 }
-              }
+              },
+              "title": "Header"
             }
           },
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "title": "Plug In",
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -5343,7 +5064,7 @@
                         "height": 8,
                         "width": 12,
                         "x": 0,
-                        "y": 48
+                        "y": 0
                       }
                     },
                     {
@@ -5356,7 +5077,7 @@
                         "height": 8,
                         "width": 12,
                         "x": 12,
-                        "y": 48
+                        "y": 0
                       }
                     },
                     {
@@ -5369,21 +5090,21 @@
                         "height": 8,
                         "width": 12,
                         "x": 0,
-                        "y": 56
+                        "y": 8
                       }
                     }
                   ]
                 }
-              }
+              },
+              "title": "Plug In"
             }
           },
-          {               
+          {
             "kind": "RowsLayoutRow",
-            "spec": {   
-              "title": "PV",
+            "spec": {
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -5429,16 +5150,16 @@
                     }
                   ]
                 }
-              }
+              },
+              "title": "PV"
             }
           },
-          {           
+          {
             "kind": "RowsLayoutRow",
-            "spec": {   
-              "title": "Battery Packs",
+            "spec": {
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -5523,19 +5244,19 @@
                     }
                   ]
                 }
-              }
+              },
+              "title": "Battery Packs"
             }
           },
-          {   
+          {
             "kind": "RowsLayoutRow",
             "spec": {
-              "title": "PCS",
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
-                "kind": "GridLayout", 
-                "spec": { 
+                "kind": "GridLayout",
+                "spec": {
                   "items": [
                     {
                       "kind": "GridLayoutItem",
@@ -5591,16 +5312,16 @@
                     }
                   ]
                 }
-              }
+              },
+              "title": "PCS"
             }
           },
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "title": "MQTT",
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -5620,7 +5341,8 @@
                     }
                   ]
                 }
-              }
+              },
+              "title": "MQTT"
             }
           }
         ]
@@ -5655,15 +5377,15 @@
       "timezone": "browser",
       "to": "now"
     },
-    "title": "EF OCEAN Pro Hybrid Inverter",
+    "title": "EcoFlow OCEAN Pro Hybrid Inverter",
     "variables": [
       {
         "kind": "QueryVariable",
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "Ocean Pro Inverter",
-            "value": "Ocean Pro Inverter"
+            "text": "",
+            "value": ""
           },
           "definition": "label_values(ecoflow_online, device)",
           "description": "Serial Number of EcoFlow device",
@@ -5674,9 +5396,6 @@
           "name": "device",
           "options": [],
           "query": {
-            "datasource": {
-              "name": "PBFA97CFB590B2093"
-            },
             "group": "prometheus",
             "kind": "DataQuery",
             "spec": {
@@ -5693,10 +5412,5 @@
       }
     ]
   },
-  "status": {
-    "conversion": {
-      "failed": false,
-      "storedVersion": "v2alpha1"
-    }
-  }
+  "status": {}
 }

@@ -2,7 +2,11 @@
   "apiVersion": "dashboard.grafana.app/v2beta1",
   "kind": "Dashboard",
   "metadata": {
-    "name": "adk8xbh"
+    "name": "ad7nd22",
+    "generation": 1,
+    "creationTimestamp": "2026-02-12T07:12:24Z",
+    "labels": {},
+    "annotations": {}
   },
   "spec": {
     "annotations": [
@@ -15,9 +19,6 @@
           "iconColor": "rgba(0, 211, 255, 1)",
           "name": "Annotations & Alerts",
           "query": {
-            "datasource": {
-              "name": "-- Grafana --"
-            },
             "group": "grafana",
             "kind": "DataQuery",
             "spec": {},
@@ -41,9 +42,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -62,9 +60,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -157,7 +152,7 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
@@ -181,9 +176,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -202,9 +194,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -321,36 +310,12 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch1_sample_info_load_ch_curr{device=\"$device\"}",
                         "legendFormat": "Ch1",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch2_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch2",
                         "range": true
                       },
                       "version": "v0"
@@ -363,15 +328,12 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch3_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch3",
+                        "expr": "ecoflow_load_ch2_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch2",
                         "range": true
                       },
                       "version": "v0"
@@ -384,30 +346,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch4_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch4",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "D"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -426,9 +364,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -447,51 +382,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch7_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch7",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "G"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch8_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch8",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "H"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -510,9 +400,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -531,51 +418,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch11_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch11",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "K"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch12_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch12",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "L"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -594,30 +436,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch15_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch15",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "N"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -636,30 +454,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch19_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch19",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "P"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -678,30 +472,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch23_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch23",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "R"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -720,30 +490,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch27_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch27",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "T"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -762,30 +508,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch31_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch31",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "V"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -798,48 +520,6 @@
                     },
                     "refId": "W"
                   }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch35_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch35",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "X"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch40_sample_info_load_ch_curr{device=\"$device\"}",
-                        "legendFormat": "Ch40",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "Y"
-                  }
                 }
               ],
               "queryOptions": {},
@@ -849,7 +529,7 @@
           "description": "",
           "id": 11,
           "links": [],
-          "title": "Unused Circuits Current (A)",
+          "title": "L1 Unused Circuits Current (A)",
           "vizConfig": {
             "group": "timeseries",
             "kind": "VizConfig",
@@ -868,7 +548,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -905,7 +585,8 @@
                         "value": 80
                       }
                     ]
-                  }
+                  },
+                  "unit": "amp"
                 },
                 "overrides": []
               },
@@ -919,7 +600,7 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
@@ -943,36 +624,12 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch1_sample_info_load_ch_vol{device=\"$device\"}",
                         "legendFormat": "Ch1",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch2_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch2",
                         "range": true
                       },
                       "version": "v0"
@@ -985,15 +642,12 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch3_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch3",
+                        "expr": "ecoflow_load_ch2_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch2",
                         "range": true
                       },
                       "version": "v0"
@@ -1006,30 +660,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch4_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch4",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "D"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1048,9 +678,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1069,51 +696,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch7_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch7",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "G"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch8_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch8",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "H"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1132,9 +714,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1153,51 +732,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch11_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch11",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "K"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch12_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch12",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "L"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1216,30 +750,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch15_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch15",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "N"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1258,30 +768,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch19_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch19",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "P"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1300,30 +786,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch23_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch23",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "R"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1342,30 +804,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch27_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch27",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "T"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1384,30 +822,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch31_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch31",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "V"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -1420,48 +834,6 @@
                     },
                     "refId": "W"
                   }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch35_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch35",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "X"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch40_sample_info_load_ch_vol{device=\"$device\"}",
-                        "legendFormat": "Ch40",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "Y"
-                  }
                 }
               ],
               "queryOptions": {},
@@ -1471,7 +843,7 @@
           "description": "",
           "id": 12,
           "links": [],
-          "title": "Unused Circuits Voltage (V)",
+          "title": "L1 Unused Circuits Voltage (V)",
           "vizConfig": {
             "group": "timeseries",
             "kind": "VizConfig",
@@ -1490,7 +862,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -1527,7 +899,8 @@
                         "value": 80
                       }
                     ]
-                  }
+                  },
+                  "unit": "volt"
                 },
                 "overrides": []
               },
@@ -1541,7 +914,7 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
@@ -1565,16 +938,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch14_sample_info_load_ch_curr{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch14",
+                        "legendFormat": "L1 Ch14",
                         "range": true
                       },
                       "version": "v0"
@@ -1587,16 +957,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch16_sample_info_load_ch_curr{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch16",
+                        "legendFormat": "L2 Ch16",
                         "range": true
                       },
                       "version": "v0"
@@ -1631,7 +998,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -1682,7 +1049,7 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
@@ -1706,16 +1073,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch14_sample_info_load_ch_vol{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch14",
+                        "legendFormat": "L1 Ch14",
                         "range": true
                       },
                       "version": "v0"
@@ -1728,16 +1092,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch16_sample_info_load_ch_vol{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch16",
+                        "legendFormat": "L2 Ch16",
                         "range": true
                       },
                       "version": "v0"
@@ -1772,7 +1133,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -1823,18 +1184,18 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
                   "sort": "none"
-                }   
-              }     
-            },        
+                }
+              }
+            },
             "version": "12.3.2"
-          }       
-        }         
-      },            
+          }
+        }
+      },
       "panel-15": {
         "kind": "Panel",
         "spec": {
@@ -1847,16 +1208,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch37_sample_info_load_ch_curr{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch37",
+                        "legendFormat": "L1 Ch37",
                         "range": true
                       },
                       "version": "v0"
@@ -1869,16 +1227,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch39_sample_info_load_ch_curr{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch39",
+                        "legendFormat": "L2 Ch39",
                         "range": true
                       },
                       "version": "v0"
@@ -1913,7 +1268,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -1964,7 +1319,7 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
@@ -1988,16 +1343,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch37_sample_info_load_ch_vol{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch37",
+                        "legendFormat": "L1 Ch37",
                         "range": true
                       },
                       "version": "v0"
@@ -2010,16 +1362,13 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
                         "expr": "ecoflow_load_ch39_sample_info_load_ch_vol{device=\"$device\"}",
                         "instant": false,
-                        "legendFormat": "Ch39",
+                        "legendFormat": "L2 Ch39",
                         "range": true
                       },
                       "version": "v0"
@@ -2054,7 +1403,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -2105,17 +1454,17 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
                   "sort": "none"
-                }   
-              }     
-            },        
+                }
+              }
+            },
             "version": "12.3.2"
-          }       
-        }         
+          }
+        }
       },
       "panel-17": {
         "kind": "Panel",
@@ -2129,9 +1478,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2151,31 +1497,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch20_sample_info_load_ch_curr{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch20",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "B"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2195,31 +1516,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch24_sample_info_load_ch_curr{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch24",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "D"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2239,31 +1535,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch28_sample_info_load_ch_curr{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch28",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "F"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2283,31 +1554,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch32_sample_info_load_ch_curr{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch32",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "H"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2327,31 +1573,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch36_sample_info_load_ch_curr{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch36",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "J"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2374,7 +1595,7 @@
           "description": "",
           "id": 17,
           "links": [],
-          "title": "Used Circuits Current (A)",
+          "title": "L1 Used Circuits Current (A)",
           "vizConfig": {
             "group": "timeseries",
             "kind": "VizConfig",
@@ -2393,7 +1614,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -2430,7 +1651,8 @@
                         "value": 80
                       }
                     ]
-                  }
+                  },
+                  "unit": "amp"
                 },
                 "overrides": []
               },
@@ -2444,7 +1666,7 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
@@ -2468,14 +1690,11 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch18_sample_info_load_ch_vol{device=\"$device\"}",
+                        "expr": "- ecoflow_load_ch18_sample_info_load_ch_power{device=\"$device\"}",
                         "instant": false,
                         "legendFormat": "Ch18",
                         "range": true
@@ -2490,36 +1709,11 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch20_sample_info_load_ch_vol{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch20",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "B"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch22_sample_info_load_ch_vol{device=\"$device\"}",
+                        "expr": "- ecoflow_load_ch22_sample_info_load_ch_power{device=\"$device\"}",
                         "instant": false,
                         "legendFormat": "Ch22",
                         "range": true
@@ -2534,36 +1728,11 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch24_sample_info_load_ch_vol{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch24",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "D"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch26_sample_info_load_ch_vol{device=\"$device\"}",
+                        "expr": "- ecoflow_load_ch26_sample_info_load_ch_power{device=\"$device\"}",
                         "instant": false,
                         "legendFormat": "Ch26",
                         "range": true
@@ -2578,36 +1747,11 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch28_sample_info_load_ch_vol{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch28",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "F"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch30_sample_info_load_ch_vol{device=\"$device\"}",
+                        "expr": "- ecoflow_load_ch30_sample_info_load_ch_power{device=\"$device\"}",
                         "instant": false,
                         "legendFormat": "Ch30",
                         "range": true
@@ -2622,36 +1766,11 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch32_sample_info_load_ch_vol{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch32",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "H"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch34_sample_info_load_ch_vol{device=\"$device\"}",
+                        "expr": "- ecoflow_load_ch34_sample_info_load_ch_power{device=\"$device\"}",
                         "instant": false,
                         "legendFormat": "Ch34",
                         "range": true
@@ -2666,36 +1785,11 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "ecoflow_load_ch36_sample_info_load_ch_vol{device=\"$device\"}",
-                        "instant": false,
-                        "legendFormat": "Ch36",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "J"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "ecoflow_load_ch38_sample_info_load_ch_vol{device=\"$device\"}",
+                        "expr": "- ecoflow_load_ch38_sample_info_load_ch_power{device=\"$device\"}",
                         "instant": false,
                         "legendFormat": "Ch38",
                         "range": true
@@ -2713,7 +1807,7 @@
           "description": "",
           "id": 18,
           "links": [],
-          "title": "Used Circuits Voltage (V)",
+          "title": "L1 Used Circuits Power (W)",
           "vizConfig": {
             "group": "timeseries",
             "kind": "VizConfig",
@@ -2732,7 +1826,7 @@
                     "barAlignment": 0,
                     "barWidthFactor": 0.6,
                     "drawStyle": "line",
-                    "fillOpacity": 15,
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
@@ -2769,7 +1863,8 @@
                         "value": 80
                       }
                     ]
-                  }
+                  },
+                  "unit": "watt"
                 },
                 "overrides": []
               },
@@ -2783,17 +1878,17 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
                   "sort": "none"
-                }   
-              }     
-            },        
+                }
+              }
+            },
             "version": "12.3.2"
-          }       
-        }         
+          }
+        }
       },
       "panel-19": {
         "kind": "Panel",
@@ -2807,9 +1902,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2822,15 +1914,15 @@
                       "version": "v0"
                     },
                     "refId": "A"
-                  } 
+                  }
                 }
               ],
               "queryOptions": {},
               "transformations": []
-            } 
+            }
           },
           "description": "",
-          "id": 19, 
+          "id": 19,
           "links": [],
           "title": "",
           "vizConfig": {
@@ -2907,9 +1999,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -2928,9 +2017,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3022,7 +2108,7 @@
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
-                },  
+                },
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
@@ -3034,10 +2120,10 @@
           }
         }
       },
-      "panel-20": {     
+      "panel-20": {
         "kind": "Panel",
-        "spec": {     
-          "data": {   
+        "spec": {
+          "data": {
             "kind": "QueryGroup",
             "spec": {
               "queries": [
@@ -3046,9 +2132,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3146,9 +2229,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3185,15 +2265,15 @@
                   "mappings": [
                     {
                       "options": {
-                        "1": {
-                          "color": "light-red",
-                          "index": 1,
-                          "text": "Forced Off"
-                        },
                         "0": {
                           "color": "green",
                           "index": 0,
                           "text": "Online"
+                        },
+                        "1": {
+                          "color": "light-red",
+                          "index": 1,
+                          "text": "Forced Off"
                         }
                       },
                       "type": "value"
@@ -3246,9 +2326,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3287,7 +2364,7 @@
                     "steps": [
                       {
                         "color": "red",
-                        "value": 5
+                        "value": 0
                       },
                       {
                         "color": "orange",
@@ -3342,9 +2419,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3426,9 +2500,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3469,6 +2540,10 @@
                       {
                         "color": "green",
                         "value": -100000
+                      },
+                      {
+                        "color": "green",
+                        "value": 0
                       },
                       {
                         "color": "red",
@@ -3514,9 +2589,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3559,8 +2631,12 @@
                         "value": -100000
                       },
                       {
-                        "color": "red",
+                        "color": "green",
                         "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
                       }
                     ]
                   },
@@ -3602,9 +2678,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3647,8 +2720,12 @@
                         "value": -100000
                       },
                       {
-                        "color": "red",
+                        "color": "green",
                         "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
                       }
                     ]
                   },
@@ -3690,9 +2767,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3782,9 +2856,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3874,9 +2945,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -3946,6 +3014,142 @@
           }
         }
       },
+      "panel-3": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch37_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "L1 Ch37",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch39_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "L2 Ch39",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 3,
+          "links": [],
+          "title": "Hybrid Inverter Power (W)",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "watt"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "last",
+                    "min",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
       "panel-30": {
         "kind": "Panel",
         "spec": {
@@ -3958,9 +3162,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4050,9 +3251,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4142,9 +3340,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4226,9 +3421,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4318,9 +3510,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4398,6 +3587,1376 @@
           }
         }
       },
+      "panel-35": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 35,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "none",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
+      "panel-36": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch14_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "L1 Ch14",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch16_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "L2 Ch16",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 36,
+          "links": [],
+          "title": "Heat Pump Power (W)",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "watt"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "last",
+                    "min",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
+      "panel-37": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 37,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "none",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
+      "panel-38": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch20_sample_info_load_ch_curr{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch20",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch24_sample_info_load_ch_curr{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch24",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch28_sample_info_load_ch_curr{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch28",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "F"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch32_sample_info_load_ch_curr{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch32",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "H"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch36_sample_info_load_ch_curr{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch36",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "J"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 38,
+          "links": [],
+          "title": "L2 Used Circuits Current (A)",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "amp"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "last",
+                    "min",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
+      "panel-39": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch20_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch20",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch24_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch24",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch28_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch28",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "F"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch32_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch32",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "H"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "- ecoflow_load_ch36_sample_info_load_ch_power{device=\"$device\"}",
+                        "instant": false,
+                        "legendFormat": "Ch36",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "J"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 39,
+          "links": [],
+          "title": "L2 Used Circuits Power (W)",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "watt"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "last",
+                    "min",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
+      "panel-4": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch3_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch3",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch4_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch4",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch7_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch7",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "G"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch8_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch8",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "H"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch11_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch11",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "K"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch12_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch12",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "L"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch15_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch15",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "N"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch19_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch19",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "P"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch23_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch23",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "R"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch27_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch27",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "T"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch31_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch31",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "V"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch35_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch35",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "X"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch40_sample_info_load_ch_curr{device=\"$device\"}",
+                        "legendFormat": "Ch40",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Y"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 4,
+          "links": [],
+          "title": "L2 Unused Circuits Current (A)",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "amp"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "last",
+                    "min",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
+      "panel-5": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch3_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch3",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch4_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch4",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch7_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch7",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "G"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch8_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch8",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "H"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch11_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch11",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "K"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch12_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch12",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "L"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch15_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch15",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "N"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch19_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch19",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "P"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch23_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch23",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "R"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch27_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch27",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "T"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch31_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch31",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "V"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch35_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch35",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "X"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "ecoflow_load_ch40_sample_info_load_ch_vol{device=\"$device\"}",
+                        "legendFormat": "Ch40",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Y"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 5,
+          "links": [],
+          "title": "L2 Unused Circuits Voltage (V)",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "volt"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "last",
+                    "min",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "12.3.2"
+          }
+        }
+      },
       "panel-6": {
         "kind": "Panel",
         "spec": {
@@ -4410,9 +4969,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4431,9 +4987,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4453,9 +5006,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4475,9 +5025,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4497,9 +5044,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4519,9 +5063,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4541,9 +5082,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4563,9 +5101,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4585,9 +5120,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4704,9 +5236,6 @@
                   "spec": {
                     "hidden": false,
                     "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
@@ -4814,18 +5343,17 @@
         }
       }
     },
-    "layout": {       
+    "layout": {
       "kind": "RowsLayout",
-      "spec": {       
-        "rows": [       
-          {               
+      "spec": {
+        "rows": [
+          {
             "kind": "RowsLayoutRow",
-            "spec": {     
-              "title": "Header",
+            "spec": {
               "collapse": false,
-              "hideHeader": true, 
-              "fillScreen": false, 
-              "layout": { 
+              "fillScreen": false,
+              "hideHeader": true,
+              "layout": {
                 "kind": "GridLayout",
                 "spec": {
                   "items": [
@@ -4840,37 +5368,11 @@
                         "width": 4,
                         "x": 0,
                         "y": 0
-                      }   
-                    },  
-                    {             
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-21"
-                        },
-                        "height": 2,
-                        "width": 4,
-                        "x": 0,
-                        "y": 2
-                      }   
+                      }
                     },
-                    {             
+                    {
                       "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-19"
-                        },
-                        "height": 2,
-                        "width": 4,
-                        "x": 0,
-                        "y": 4
-                      }   
-                    },
-                    {             
-                      "kind": "GridLayoutItem",
-                      "spec": { 
+                      "spec": {
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-23"
@@ -4879,32 +5381,6 @@
                         "width": 3,
                         "x": 4,
                         "y": 0
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-24"
-                        },
-                        "height": 2,
-                        "width": 3,
-                        "x": 4,
-                        "y": 2
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-25"
-                        },
-                        "height": 2,
-                        "width": 3,
-                        "x": 4,
-                        "y": 4
                       }
                     },
                     {
@@ -4925,19 +5401,6 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-22"
-                        },
-                        "height": 3,
-                        "width": 3,
-                        "x": 7,
-                        "y": 3
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
                           "name": "panel-30"
                         },
                         "height": 2,
@@ -4951,38 +5414,77 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
+                          "name": "panel-27"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 18,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-33"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 20,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-34"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 22,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-21"
+                        },
+                        "height": 2,
+                        "width": 4,
+                        "x": 0,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-24"
+                        },
+                        "height": 2,
+                        "width": 3,
+                        "x": 4,
+                        "y": 2
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
                           "name": "panel-31"
                         },
                         "height": 2,
                         "width": 2,
                         "x": 16,
                         "y": 2
-                      }   
-                    },  
-                    { 
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-32"
-                        },
-                        "height": 2,
-                        "width": 2,
-                        "x": 16,
-                        "y": 4 
-                      }   
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-27"
-                        },
-                        "height": 2, 
-                        "width": 2,
-                        "x": 18,
-                        "y": 0
                       }
                     },
                     {
@@ -5003,6 +5505,58 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
+                          "name": "panel-22"
+                        },
+                        "height": 3,
+                        "width": 3,
+                        "x": 7,
+                        "y": 3
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-19"
+                        },
+                        "height": 2,
+                        "width": 4,
+                        "x": 0,
+                        "y": 4
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-25"
+                        },
+                        "height": 2,
+                        "width": 3,
+                        "x": 4,
+                        "y": 4
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-32"
+                        },
+                        "height": 2,
+                        "width": 2,
+                        "x": 16,
+                        "y": 4
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
                           "name": "panel-29"
                         },
                         "height": 2,
@@ -5010,45 +5564,19 @@
                         "x": 18,
                         "y": 4
                       }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-33"
-                        },
-                        "height": 2, 
-                        "width": 2,
-                        "x": 20,
-                        "y": 0
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": { 
-                        "element": {
-                          "kind": "ElementReference",
-                          "name": "panel-34"
-                        },
-                        "height": 2, 
-                        "width": 2,
-                        "x": 22,
-                        "y": 0
-                      }
                     }
                   ]
                 }
-              }
+              },
+              "title": "Header"
             }
           },
           {
             "kind": "RowsLayoutRow",
-            "spec": {   
-              "title": "Plug In",
+            "spec": {
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -5107,19 +5635,19 @@
                     }
                   ]
                 }
-              }
+              },
+              "title": "Plug In"
             }
           },
-          {   
+          {
             "kind": "RowsLayoutRow",
             "spec": {
-              "title": "Circuits",
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
-                "kind": "GridLayout", 
-                "spec": { 
+                "kind": "GridLayout",
+                "spec": {
                   "items": [
                     {
                       "kind": "GridLayoutItem",
@@ -5152,12 +5680,38 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-13"
+                          "name": "panel-3"
                         },
                         "height": 8,
                         "width": 12,
                         "x": 0,
                         "y": 8
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-35"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 12,
+                        "y": 8
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-13"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 0,
+                        "y": 16
                       }
                     },
                     {
@@ -5170,7 +5724,33 @@
                         "height": 8,
                         "width": 12,
                         "x": 12,
-                        "y": 8
+                        "y": 16
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-36"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 0,
+                        "y": 24
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-37"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 12,
+                        "y": 24
                       }
                     },
                     {
@@ -5183,7 +5763,7 @@
                         "height": 8,
                         "width": 12,
                         "x": 0,
-                        "y": 16
+                        "y": 32
                       }
                     },
                     {
@@ -5196,7 +5776,33 @@
                         "height": 8,
                         "width": 12,
                         "x": 12,
-                        "y": 16
+                        "y": 32
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-38"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 0,
+                        "y": 40
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-39"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 12,
+                        "y": 40
                       }
                     },
                     {
@@ -5209,7 +5815,7 @@
                         "height": 8,
                         "width": 12,
                         "x": 0,
-                        "y": 24
+                        "y": 48
                       }
                     },
                     {
@@ -5222,21 +5828,47 @@
                         "height": 8,
                         "width": 12,
                         "x": 12,
-                        "y": 24
+                        "y": 48
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-4"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 0,
+                        "y": 56
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-5"
+                        },
+                        "height": 8,
+                        "width": 12,
+                        "x": 12,
+                        "y": 56
                       }
                     }
                   ]
                 }
-              }
+              },
+              "title": "Circuits"
             }
           },
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "title": "MQTT",
               "collapse": false,
-              "hideHeader": false,
               "fillScreen": false,
+              "hideHeader": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -5256,7 +5888,8 @@
                     }
                   ]
                 }
-              }
+              },
+              "title": "MQTT"
             }
           }
         ]
@@ -5291,15 +5924,15 @@
       "timezone": "browser",
       "to": "now"
     },
-    "title": "EF OCEAN Pro Smart Panel",
+    "title": "EcoFlow OCEAN Smart Electrical Panel",
     "variables": [
       {
         "kind": "QueryVariable",
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "Ocean Pro Smart Panel",
-            "value": "Ocean Pro Smart Panel"
+            "text": "",
+            "value": ""
           },
           "definition": "label_values(ecoflow_online, device)",
           "description": "Serial Number of EcoFlow device",
@@ -5310,9 +5943,6 @@
           "name": "device",
           "options": [],
           "query": {
-            "datasource": {
-              "name": "PBFA97CFB590B2093"
-            },
             "group": "prometheus",
             "kind": "DataQuery",
             "spec": {
@@ -5329,10 +5959,5 @@
       }
     ]
   },
-  "status": {
-    "conversion": {
-      "failed": false,
-      "storedVersion": "v2alpha1"
-    }
-  }
+  "status": {}
 }
