@@ -4,6 +4,9 @@ Exporter should run along with [Prometheus](http://prometheus.io) and [Grafana](
 
 ⚠️ This article does not cover Telegram-related things such as new bot token creation process, joining to the chat and so on. Please, talk directly to [Bot Father](https://telegram.me/BotFather)
 
+⚠️ ⚠️  **Upgrade Warning**: If your Grafana container does not want to come up after a git pull, the reason is most likely the mismatch in datasource definitions. Stop the containers, find the location of the `grafana_data` mount on your host (for me, it's `/home/docker/volumes/docker-compose_grafana_data/_data`) and remove everything inside there. On the next startup, Grafana will start with the new datasource definition[s].
+
+
 ## Compose
 
 Project structure:
