@@ -80,8 +80,7 @@ class EcoflowAuthentication:
 
         log.info(f"Successfully extracted account: {self.mqtt_username}")
 
-    @staticmethod
-    def get_json_response(request):
+    def get_json_response(self, request):
         if request.status_code != 200:
             raise Exception(f"Got HTTP status code {request.status_code}: {request.text}")
 
@@ -107,6 +106,7 @@ class EcoflowDevice():
         self.device_name = device_name
         self.device_type = device_type
         self.topic = f"/app/device/property/{device_sn}"
+        self.last_quota_topic = None
         self.last_message_time = None
         self.handled_messages = 0
 
@@ -168,7 +168,12 @@ class EcoflowMQTT():
         self.client.on_message = self.on_message
 
         log.info(f"Connecting to MQTT Broker {self.addr}:{self.port} using client id {self.client_id}")
-        self.client.connect(self.addr, self.port)
+        try:
+            self.client.connect(self.addr, self.port) # XXX -3
+        except socket.gaierror as e:
+            log.warning(f"Connection to MQTT Broker {self.addr}:{self.port} failed: {e}, retrying...")
+            time.sleep(30)
+            return False
         self.client.loop_start()
 
         self.idle_timer = RepeatTimer(10, self.idle_reconnect)
@@ -203,6 +208,9 @@ class EcoflowMQTT():
         payload = json.dumps(message)
 
         topic = f"/app/{self.user_id}/{ef_d.device_sn}/thing/property/get"
+        if ef_d.last_quota_topic == None:
+            ef_d.last_quota_topic = f"{topic}_reply"
+            self.client.subscribe(ef_d.last_quota_topic)
 
         info = self.client.publish(topic, payload, 1)
         info.wait_for_publish(5.0)
@@ -245,6 +253,7 @@ class EcoflowMQTT():
         payload = json.dumps(message)
 
         topic = f"/app/{self.user_id}/{ef_d.device_sn}/thing/property/set"
+        self.client.subscribe(f"{topic}_reply")
         info = self.client.publish(topic, payload, 1)
         info.wait_for_publish(5.0)
 
@@ -256,7 +265,8 @@ class EcoflowMQTT():
 
     def ping(self):
         for d in self.user_data:
-            self.ping_device(d)
+            # self.ping_device(d)
+            self.request_latest_quotas_device(d)
 
 
     def on_connect(self, client, _userdata, _flags, reason_code, _properties):
@@ -306,11 +316,12 @@ class EcoflowMQTT():
     def on_message(self, _client, userdata, message):
         ef_d = None
         for d in userdata:
-            if d.topic == message.topic:
+            if message.topic == d.topic:
                 ef_d = d
 
         if ef_d == None:
             log.error(f"No device found for {message.topic}")
+            log.error(f"payload: {message}")
             return
 
         if ef_d.device_type is None:
@@ -345,7 +356,10 @@ class EcoflowMetric:
         self.ecoflow_payload_key = metric_data['name']
         self.name = f"ecoflow_{self.convert_ecoflow_key_to_prometheus_name()}"
         self.metric = Gauge(self.name, f"value from MQTT object key {self.ecoflow_payload_key}", labelnames = metric_data['labels'].keys())
+        self.latest_udates = {}
 
+    def _labels2tuple(self, labels):
+        return tuple(str(labels[l]) for l in sorted(labels.keys()))
 
     def convert_ecoflow_key_to_prometheus_name(self):
         # bms_bmsStatus.maxCellTemp -> bms_bms_status_max_cell_temp
@@ -369,12 +383,22 @@ class EcoflowMetric:
         # value = value / 1000 if value.endswith("_vol") or value.endswith("_amp") else value
         log.debug(f"Set {self.name} = {value}")
         self.metric.labels(**labels).set(value)
+        self.latest_udates[self._labels2tuple(labels)] = { "labels": labels, "time": time.time() }
 
 
     def clear(self, labels):
         log.debug(f"Clear {self.name}")
         self.metric.labels(**labels).clear()
+        del self.latest_udates[self._labels2tuple(labels)]
 
+    def clear_stale_values(self, timediff = 60):
+        now = time.time()
+        for k in list(self.latest_udates.keys()):
+            dt = now - self.latest_udates[k]["time"]
+            if dt > timediff:
+                log.debug(f"EcoflowMetric.clear_stale_values({self.name}{k} -> {dt} --> cleanup")
+                self.metric.remove_by_labels(self.latest_udates[k]["labels"])
+                del self.latest_udates[k]
 
 class Worker:
     def __init__(self, message_queue, device_list, collecting_interval_seconds = 10):
@@ -440,6 +464,9 @@ class Worker:
                         self.online.labels(device = d.device_name).set(0)
                         # XXX How to clear old values?
                     d.handled_messages = 0
+
+            for metric in self.metrics_collector:
+                metric.clear_stale_values(660)
 
             time.sleep(self.collecting_interval_seconds)
 
@@ -532,13 +559,15 @@ class Worker:
                     log.info(f"Created new metric from payload key {metric.ecoflow_payload_key} -> {metric.name}")
                     self.metrics_collector.append(metric)
 
-                metric.metric.labels(**_metric['labels']).set(_metric['value'])
+                # metric.metric.labels(**_metric['labels']).set(_metric['value'])
+                metric.set(_metric['labels'], _metric['value'])
 
                 if ecoflow_payload_key == 'inv.acInVol' and ecoflow_payload_value == 0:
                     ac_in_current = self.get_metric_by_ecoflow_payload_key('inv.acInAmp')
                     if ac_in_current:
                         log.debug("Set AC inverter input current to zero because of zero inverter voltage")
-                        ac_in_current.metric.labels(**_metric['labels']).set(0)
+                        # ac_in_current.metric.labels(**_metric['labels']).set(0)
+                        ac_in_current.set(_metric['labels'], 0)
 
 
 def signal_handler(signum, _frame):
