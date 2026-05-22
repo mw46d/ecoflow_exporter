@@ -323,8 +323,8 @@ class EcoflowMQTT():
                 break
             p = re.compile(f"/app/[^/]*/{d.device_sn}/thing/property/[gs]et_reply")
             if p.match(message.topic):
-                ef_d = d
-                break
+                log.info(f"Ignore reply to {message.topic}")
+                return
 
         if ef_d == None:
             log.error(f"No device found for {message.topic}")
@@ -444,12 +444,8 @@ class Worker:
                     continue
 
                 try:
-                    params = None
                     payload = json.loads(payload)
-                    if 'params' in payload:
-                        params = payload['params']
-                    else:
-                        params = payload['data']
+                    params = payload['params']
                     self.process_payload(ef_d.device_name, params)
                     handled_devices.append(ef_d)
                     ef_d.handled_messages += 1
