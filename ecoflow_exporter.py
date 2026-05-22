@@ -173,7 +173,8 @@ class EcoflowMQTT():
             self.client.connect(self.addr, self.port) # XXX -3
         except socket.gaierror as e:
             log.warning(f"Connection to MQTT Broker {self.addr}:{self.port} failed: {e}, retrying...")
-            time.sleep(30)
+            # long sleep to trigger the timeout below.
+            time.sleep(120)
             return False
         self.client.loop_start()
 
