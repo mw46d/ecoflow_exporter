@@ -320,10 +320,15 @@ class EcoflowMQTT():
         for d in userdata:
             if message.topic == d.topic:
                 ef_d = d
+                break
+            p = re.compile(f"/app/[^/]*/{d.device_sn}/thing/property/[gs]et_reply")
+            if p.match(message.topic):
+                ef_d = d
+                break
 
         if ef_d == None:
             log.error(f"No device found for {message.topic}")
-            log.error(f"payload: {message}")
+            log.error(f"payload: {message.payload.decode('utf-8')}")
             return
 
         if ef_d.device_type is None:
