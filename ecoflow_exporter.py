@@ -444,8 +444,12 @@ class Worker:
                     continue
 
                 try:
+                    params = None
                     payload = json.loads(payload)
-                    params = payload['params']
+                    if 'params' in payload:
+                        params = payload['params']
+                    else:
+                        params = payload['data']
                     self.process_payload(ef_d.device_name, params)
                     handled_devices.append(ef_d)
                     ef_d.handled_messages += 1
